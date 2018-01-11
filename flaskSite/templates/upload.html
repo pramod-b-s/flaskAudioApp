@@ -1,0 +1,90 @@
+<html>
+
+<style>
+input[type=url], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block-inline;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=time], select {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block-inline;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+</style>
+
+   <body>
+   
+<!--       <form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form> -->
+      
+    <!-- <button onclick="getURL()" display="block">Add URL</button> -->
+    
+    <form method="POST" action = "http://localhost:5000/upload">
+    	<input type="url" name="text1" placeholder="Enter Youtube URL"><br>
+<!--     	Enter starting time  
+    	<input type="time" name="beg_time" value="00:00"><br>
+    	Enter ending time  
+    	<input type="time" name="end_time" value="00:00"><br> -->
+    	<input type="submit" name="process" value="Download">
+	</form>
+
+	<!-- <button href='http://localhost:5000/uploadSuccess' enctype = "multipart/form-data">
+    	Upload mp3 file</button>
+    <button href='http://localhost:5000/download' enctype = "multipart/form-data">
+   		Download mp3 file</button> -->
+
+	<script>
+	function addField(){
+		var x = document.createElement("INPUT");   	
+    	x.setAttribute("type", "url");
+    	x.setAttribute("name","text")
+    	x.setAttribute("value", "Enter Youtube URL");
+    	document.body.appendChild(x);
+	}
+
+	function getURL() {
+    	var x = document.createElement("INPUT");
+    	// x.setAttribute("placeholder, "Enter a YoutubeURL");    	
+    	x.setAttribute("type", "url");
+    	x.setAttribute("id","urlVal")
+    	x.setAttribute("hint", "Enter a Youtube URL");
+    	document.body.appendChild(x);
+
+    	var button = document.createElement("button");
+		button.innerHTML = "Add custom times";
+		document.body.appendChild(button);
+		button.addEventListener ("click", function() {
+  			displayTimeFields();
+		});
+	}
+
+	function displayTimeFields() {
+		var x = document.createElement("INPUT");
+    	// x.setAttribute("placeholder, "Enter a YoutubeURL");    	
+    	x.setAttribute("type", "time");
+    	x.setAttribute("hint", "Start");
+    	document.body.appendChild(x);
+
+    	var x = document.createElement("INPUT");
+    	// x.setAttribute("placeholder, "Enter a YoutubeURL");    	
+    	x.setAttribute("type", "time");
+    	x.setAttribute("hint", "End");
+    	document.body.appendChild(x);
+	}
+	</script>
+
+   </body>
+</html>

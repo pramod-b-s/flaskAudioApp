@@ -1,0 +1,18 @@
+connect :
+ssh -i "AudioWebApp.pem" ubuntu@ec2-18-218-160-126.us-east-2.compute.amazonaws.com
+
+venv activation :
+source ~/eb-virt/bin/activate
+
+install pip using easy_install
+first install easy_install
+
+install youtube_dl using :
+wget https://pypi.python.org/packages/2e/ff/cdb343539a5696c020312c1acc008cbef1593570488ec76803a754e61abf/youtube_dl-2017.12.31-py2.py3-none-any.whl#md5=fa708449a925f97059f8b88504170ca7
+pip3 install youtube_dl-2017.12.31-py2.py3-none-any.whl
+
+elastic beanstalk credentials :
+AKIAIH2KXRWHLS4BPZTQ
+ChIZuQyXCFMgO55gG3k4gR2OGv7+Fi6gralc4Qec
+
+eb create flaskAudioApp			- name used
